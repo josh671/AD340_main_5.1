@@ -31,18 +31,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         parks.setOnClickListener(this);
         music.setOnClickListener(this);
         food.setOnClickListener(this);
+        movies.setOnClickListener(this);
+        traffic.setOnClickListener(this);
 
-        movies.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, MoviesActivity.class);
-            startActivity(intent);
-        });
 
-//
-//        //homework3
-//        traffic.setOnClickListener(view -> {
-//            Intent intent = new Intent(MainActivity.this, Traffic_Activity.class);
-//            startActivity(intent);
-//        });
 
     }
 
@@ -63,9 +55,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.food:
                 Toast.makeText(this, "Food", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.movies:
+                openMoviesPage();
+                break;
+            case R.id.traffic:
+                openTrafficPage();
+                break;
         }
     }
-
-
+    public void openTrafficPage(){
+        Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+        startActivity(intent);
+    }
+    public void openMoviesPage(){
+        Intent intent = new Intent(MainActivity.this, MoviesActivity.class);
+        startActivity(intent);
+    }
 
 }

@@ -106,8 +106,6 @@ public class MoviesActivity extends AppCompatActivity {
             instance.setIndicatorsEnabled(true);
             instance.load(movies[position][3]).into(viewHolder.image);
 
-            //Picasso.get().load(movies[position][3]).into(viewHolder.image);
-
             Log.d("url", movies[position][3]);
         }
 
